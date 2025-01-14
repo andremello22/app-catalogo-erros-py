@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 from tkinter import Label, ttk, Tk
 import tkinter as tk
+from banco_de_dados import *
 
 @dataclass
 class Tela:
@@ -143,7 +144,8 @@ class Tela:
 
     def inserir(self):
         try:
-            print("ola")
+           bd = BancoDeDados()
+           bd.inserir_erros(self.campoModelo.get(), self.campoDefeito.get(), self.campoDescricao.get(), self.campoCodigo.get())
         except Exception as e:
             print(f'Erro ao inserir: {e}')
 
@@ -162,7 +164,7 @@ class Tela:
 
     def carregar_dados_tabela(self):
         try:
-            print("ola")
+            bd = BancoDeDados()
         except Exception as e:
             print(f'Erro ao carregar dados na tabela: {e}')
         
