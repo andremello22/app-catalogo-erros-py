@@ -26,7 +26,7 @@ class BancoDeDados:
 
 
  
-    def inserirUsuario(modelo, defeito, descricao, codigo):
+    def inserirErros(self, modelo, defeito, descricao, codigo):
         try:
             conexao = connect.connect("bd_catalogo.sqlite")
             cursor = conexao.cursor()
@@ -45,7 +45,7 @@ class BancoDeDados:
 
 
   
-    def selecionarUsuario():
+    def selecionarErros(self):
         try:
             conexao = connect.connect("bd_catalogo.sqlite")
             cursor = conexao.cursor()
@@ -64,11 +64,11 @@ class BancoDeDados:
   
 
 
-    def editarUsuario(modelo, defeito, descricao, codigo, id):
+    def editarErros(self, id, modelo, defeito, descricao, codigo):
         try:
             conexao = connect.connect("bd_catalogo.sqlite")
             cursor = conexao.cursor()
-            cursor.execute('''UPDATE catalogo_de_erros SET modelo = ?, defeito = ?, descricao = ?, codigo = ?, WHERE id = ?''', (modelo,defeito,descricao,codigo ,id))
+            cursor.execute('''UPDATE catalogo_de_erros SET modelo = ?, defeito = ?, descricao = ?, codigo = ? WHERE id = ?''', (modelo,defeito,descricao,codigo ,id))
             conexao.commit()
         
         except connect.Error as e:
@@ -81,7 +81,7 @@ class BancoDeDados:
 
 
 
-    def excluriUsuario(id):
+    def excluirErros(self, id):
         try:
             conexao = connect.connect("bd_catalogo.sqlite")
             cursor = conexao.cursor()
