@@ -16,7 +16,7 @@ class Tela:
         self.cliente = clientes
        # print(self.cliente)
         self.janela = Tk()
-        self.janela.title('Tela de cadastro')
+        self.janela.title('App-catalogo-de-erros')
 
         # Definir o caminho absoluto para o ícone .ico
         caminho_icone = "D:\\python_poo\\app-catalogo-erros-py-main\\logo-suporte.ico"
@@ -27,7 +27,7 @@ class Tela:
         
         self.lb_titulo = Label(
             self.janela,
-            text=" Tela de catálogo de erros",
+            text="catálogo de erros",
             font=("Arial", "20", "bold"),
             fg="black",
         )
