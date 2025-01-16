@@ -38,6 +38,8 @@ class ClienteService:
                     clientes_atualizados.append(cliente_atualizado)
                     if dias_para_visita <= 0:
                         messagebox.showinfo('Aviso', f'Cliente {cliente["nome"]} venceu a visita em {abs(dias_para_visita)} dias.')
+                        self.data_referencia = datetime.now()
+                        self.geraTxt()
                 return clientes_atualizados
         except Exception as e:
             messagebox.showerror('Erro', f'Erro ao verificar data: {e}')
