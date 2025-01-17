@@ -5,6 +5,7 @@ import tkinter as tk
 from dataclasses import dataclass
 from calendario import ClienteService
 from clientes import clientes
+import os
 
 @dataclass
 class Tela:
@@ -19,7 +20,7 @@ class Tela:
         self.janela.title('App-catalogo-de-erros')
 
         # Definir o caminho absoluto para o ícone .ico
-        caminho_icone = "D:\\python_poo\\app-catalogo-erros-py-main\\logo-suporte.ico"
+        caminho_icone = ''.join(os.path.abspath('logo-suporte.ico'))
         self.janela.iconbitmap(caminho_icone)
         
         self.centralizar_janela(self.largura, self.altura)
