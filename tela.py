@@ -247,8 +247,7 @@ class Tela:
     def alertaParaCliente(self, clientes):
         cliente_service = ClienteService(clientes)
         clientes_atualizados = cliente_service.verificaData()
-        for cliente in clientes_atualizados:
-            print(cliente)
+        
         return clientes_atualizados
 
 
